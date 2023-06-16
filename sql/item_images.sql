@@ -1,0 +1,89 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jun 13, 2023 at 11:40 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `e-commerce`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `item_images`
+--
+
+CREATE TABLE `item_images` (
+  `id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `image_` varbinary(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `item_images`
+--
+
+INSERT INTO `item_images` (`id`, `item_id`, `image_`) VALUES
+(1, 1, 0x3531683679674d4e6e6c4c2e5f41435f53593530302e5f53582e5f55582e5f53592e5f55595f2e6a7067),
+(2, 1, 0x35317341382b7756354b4c2e5f41435f55593530305f2e6a7067),
+(3, 1, 0x3731537a2b47676c4e434c2e5f41435f53593530302e5f53582e5f55582e5f53592e5f55595f2e6a7067),
+(4, 1, 0x3531356d51752b2b64364c2e5f41435f53593530302e5f53582e5f55582e5f53592e5f55595f2e6a7067),
+(5, 2, 0x35316c6d4b75364b35564c2e5f41435f53583532322e5f53582e5f55582e5f53592e5f55595f2e6a7067),
+(6, 2, 0x3631664a4d466f6c35414c2e5f41435f53583532322e5f53582e5f55582e5f53592e5f55595f2e6a7067),
+(7, 2, 0x36314e724d4d56692b754c2e5f41435f53583532322e5f53582e5f55582e5f53592e5f55595f2e6a7067),
+(8, 2, 0x363151434f636c4766544c2e5f41435f55583532325f2e6a7067),
+(9, 3, 0x37312d587970684c78684c2e5f41435f53593530302e5f53582e5f55582e5f53592e5f55595f2e6a7067),
+(10, 3, 0x383144495456774a7a464c2e5f41435f55593530305f2e6a7067),
+(11, 3, 0x3831446a597661442d7a4c2e5f41435f55593530305f2e6a7067),
+(12, 3, 0x3831664d6362686a72554c2e5f41435f53593530302e5f53582e5f55582e5f53592e5f55595f2e6a7067),
+(13, 3, 0x38316c6f4c624d3534664c2e5f41435f55593530305f2e6a7067);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `item_images`
+--
+ALTER TABLE `item_images`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `item_id` (`item_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `item_images`
+--
+ALTER TABLE `item_images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `item_images`
+--
+ALTER TABLE `item_images`
+  ADD CONSTRAINT `item_images_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `items` (`id`) ON DELETE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

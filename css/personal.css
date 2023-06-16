@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    margin: 100px auto;
+    width: 600px;
+}
+
+.container h5{
+    text-align: center;
+}
+.msg{
+   text-align: center;
+}
+.error , .success{
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+.success{
+    color: green;
+}
